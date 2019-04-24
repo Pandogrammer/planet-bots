@@ -4,6 +4,15 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
+/*
+# cosas que habria que testear
++ creacion
++ movimiento
++ cambio de direccion
++ exploracion
++ recoleccion
++ campo de vision
+ */
 class RobotTest{
 
     private lateinit var world : World
