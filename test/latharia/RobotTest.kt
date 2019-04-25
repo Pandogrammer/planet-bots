@@ -19,7 +19,7 @@ class RobotTest{
 
     @Before
     fun init(){
-        givenAWorld(10, 10)
+        givenAWorld()
     }
 
     @Test
@@ -38,7 +38,7 @@ class RobotTest{
     fun `robot position`(){
         givenARobot(5, 5)
 
-        Assert.assertEquals(world.robots[0], world.floor[5][5]?.robot)
+        Assert.assertEquals(world.robots[0], world.level.floor[5][5]?.robot)
     }
 
     @Test
@@ -55,8 +55,8 @@ class RobotTest{
         world.addRobot(x, y)
     }
 
-    private fun givenAWorld(width: Int, height: Int) {
-        world = World(width, height)
+    private fun givenAWorld() {
+        world = World()
     }
 
 

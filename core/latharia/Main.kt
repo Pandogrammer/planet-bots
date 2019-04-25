@@ -1,6 +1,12 @@
 package latharia
 
 fun main(args : Array<String>) {
-    print("holis")
+    val w = World()
+
+    w.time.subscribe {
+                println("item: $it")
+            }
+
+    while(true){}
 }
 
