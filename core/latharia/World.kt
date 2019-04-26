@@ -25,7 +25,21 @@ class World {
 
 		level.floor[x][y]?.robot = robot
 
-		robot.movement.subscribe { m -> println(m) }
+		robot.movement.subscribe { m -> moveRobot(robot, m) }
+	}
+
+	private fun moveRobot(robot: Robot, m: Movement) {
+
+		when (m) {
+			Movement.LEFT -> robot.x--
+			Movement.RIGHT -> robot.x++
+			Movement.DOWN -> robot.y--
+			Movement.UP -> robot.y++
+		}
+
+		level.floor[robot.x][robot.y]?.robot = robot
+
+		println("moving robot to ${robot.x}, ${robot.y}")
 	}
 
 }
