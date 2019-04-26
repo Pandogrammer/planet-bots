@@ -29,17 +29,22 @@ class World {
 	}
 
 	private fun moveRobot(robot: Robot, m: Movement) {
+		var x = robot.x
+		var y = robot.y
 
 		when (m) {
-			Movement.LEFT -> robot.x--
-			Movement.RIGHT -> robot.x++
-			Movement.DOWN -> robot.y--
-			Movement.UP -> robot.y++
+			Movement.LEFT -> x--
+			Movement.RIGHT -> x++
+			Movement.DOWN -> y--
+			Movement.UP -> y++
 		}
 
-		level.floor[robot.x][robot.y]?.robot = robot
+		level.floor[x][y]?.robot = robot
 
-		println("moving robot to ${robot.x}, ${robot.y}")
+		println("moving robot to $x, $y")
+
+		robot.x = x
+		robot.y = y
 	}
 
 }
