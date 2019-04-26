@@ -41,18 +41,9 @@ class RobotTest{
         Assert.assertEquals(world.robots[0], world.level.floor[5][5]?.robot)
     }
 
-    @Test
-    fun `robot movement`(){
-        givenARobot(5, 5)
-        val robot = world.robots[0]
-
-        world.moveRobots()
-
-        Assert.assertEquals(4, robot.x)
-    }
 
     private fun givenARobot(x: Int, y: Int) {
-        world.addRobot(x, y)
+        world.addRobot(x, y, world.time)
     }
 
     private fun givenAWorld() {

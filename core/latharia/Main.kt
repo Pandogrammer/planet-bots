@@ -7,6 +7,8 @@ fun main(args : Array<String>) {
                 println("item: $it")
             }
 
+    w.addRobot(5, 1, w.time)
+
     while(true){}
 }
 
